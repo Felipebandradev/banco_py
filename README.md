@@ -1,2 +1,1 @@
-# banco_py
- Simulador de um caixa ele trônico em python
+# Simulador de um caixa de banco em python
