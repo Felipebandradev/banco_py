@@ -9,11 +9,9 @@ def valida_senha():
     else:
         print('Senha ou login incorretos')
 
-
-
 # criando janela
 janela = tk.Tk()
-janela.geometry('400x400')
+janela.geometry('300x350')
 janela.title('Login caixa')
 
 # Criando inputs de login
