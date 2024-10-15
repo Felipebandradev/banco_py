@@ -1,33 +1,48 @@
-# import da biblioteca de ciação da gui
+from janela import Janela
 import tkinter as tk
 
-def valida_senha():
-    nome = usuario.get()
-    psw = senha.get()
-    if nome == 'padrão' and psw == '123a':
-        print('Logado')
-    else:
-        print('Senha ou login incorretos')
+class Tela_login(Janela):
+        
+        def __init__(self, nome, titulo):
+            super().__init__(nome, titulo)
 
-# criando janela
-janela = tk.Tk()
-janela.geometry('300x350')
-janela.title('Login caixa')
+             
 
-# Criando inputs de login
-usuario = tk.Entry(janela)
-usuario.pack(padx=50, pady=50)
+        def criar_login(self):
+            
+            #Criando a função de validação
+            def valida_senha():
+                    
+                    nome = usuario.get()
+                    psw =  senha.get()
+                    
+                    if nome == 'admim' and psw == '123':
+                        #comando para fechar a janela atual por completo
+                        self.janela.destroy()
+                       
+                        # Criando uma nova janela
+                        teste = Janela('Conta corrente', 'Saldo')
+                        teste.criar_janela()
+                        teste.exibir_janela()
+                        
+                    else:
+                        print('Senha ou login incorretos')
+                        
+            self.criar_janela()
+            
+            # Criando inputs de login
+            usuario = tk.Entry(self.janela)
+            usuario.pack(padx=10, pady=10)
 
-senha = tk.Entry(janela)
-senha.pack(padx=50, pady=50)
+            senha = tk.Entry(self.janela, show='*')
+            senha.pack(padx=10, pady=10)
 
-# Criando o botão de validação
-botao = tk.Button(janela, text="login", command=valida_senha, bg='pink')
-botao.pack(padx=50, pady=50)
+            # Criando o botão de validação
+            botao = tk.Button(self.janela, text=f"{self.titulo}", command=valida_senha)
+            botao.pack(padx=10, pady=10)
 
-# mantendo a jenela aberta
+            self.exibir_janela()
 
-janela.mainloop()
 
 
 
