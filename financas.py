@@ -73,5 +73,5 @@ class telaFinancas(Janela,ContaCorrente):
     
     
 
-app = telaFinancas('Finanças', 'Deposite ou Saque', 'Admim', 0)
-app.criarFinancas()
+# app = telaFinancas('Finanças', 'Deposite ou Saque', 'Admim', 0)
+# app.criarFinancas()
