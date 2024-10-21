@@ -1,5 +1,8 @@
 # Simulador de conta corrente em python
 
+<div align="center" >
+<img src='img/logos/logobgescuroNome.png' style="width:350px;" alt='Logo do banco em formato de cobra assustada com dinheiro'>
+</div>
 Para iniciar a execução do aplicativo será necessário
 
 - Ter o **Python** instalado na sua máquina
