@@ -2,6 +2,7 @@ import tkinter as tk
 from ContaCorrente import ContaCorrente
 from janela import Janela
 
+
 class telaFinancas(Janela,ContaCorrente):
     def __init__(self, nome, titulo, usuario, saldoAtual):
         super().__init__(nome, titulo)
@@ -34,9 +35,17 @@ class telaFinancas(Janela,ContaCorrente):
                 self.sacar(valorDoSaque)
                 self.saldoAtual = self.saldo
                 exibirSaldo.config(text=f'Saldo: R$ {self.saldoAtual:.2f}')
+                lb_textoFEEDBACK.config(text='Saque realizado com sucesso!! ', foreground='green')
+                lb_textoFEEDBACK.pack(pady=5)
             else:
                 lb_textoFEEDBACK.config(text='Cuidado, valor do saque está maior que o saldo!! ', foreground='red')
                 lb_textoFEEDBACK.pack(pady=5)
+            
+        def voltarHome():
+            from home import Home
+            self.janela.destroy()
+            home = Home("Home","Menu Principal",self.usuario, self.saldoAtual)
+            home.criarHome()
 
 
         
@@ -67,6 +76,9 @@ class telaFinancas(Janela,ContaCorrente):
         b_sacar.pack(pady=5)
 
         lb_textoFEEDBACK = tk.Label(self.janela, text='')
+
+        b_voltar = tk.Button(self.janela, text='Voltar a Home', command=voltarHome)
+        b_voltar.pack(pady=5)
 
 
         self.exibir_janela()

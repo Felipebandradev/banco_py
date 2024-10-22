@@ -3,12 +3,13 @@ from janela import Janela
 # Import da biblioteca de criação de GUI
 import tkinter as tk
 from tkinter import messagebox as msg
-from financas import telaFinancas
+from home import Home
 
 class Tela_login(Janela):
         
-    def __init__(self, nome, titulo):
+    def __init__(self, nome, titulo,saldo):
         super().__init__(nome, titulo)
+        self.saldo = saldo
 
 
     def criar_login(self):
@@ -27,8 +28,8 @@ class Tela_login(Janela):
                     self.janela.destroy()
                        
                     # Criando uma nova janela
-                    finacas = telaFinancas('Conta corrente', 'Saldo', nome, 0)
-                    finacas.criarFinancas()              
+                    finacas = Home('Conta corrente', 'Saldo', nome, self.saldo)
+                    finacas.criarHome()              
                 else:
                     usuario.config(highlightbackground='red', highlightthickness=2, highlightcolor='red')
                     senha.config(highlightbackground='red', highlightthickness=2, highlightcolor='red')
