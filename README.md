@@ -1,7 +1,8 @@
 # Simulador de conta corrente em python
 
-<div align="center" >
+<div style="display:flex; justify-content:center;" align="center" >
 <img src='img/logos/logobgescuroNome.png' style="width:350px;" alt='Logo do banco em formato de cobra assustada com dinheiro'>
+<img src='img/logos/logobgclaroNome.png' style="width:350px;" alt='Logo do banco em formato de cobra assustada com dinheiro'>
 </div>
 Para iniciar a execução do aplicativo será necessário
 
