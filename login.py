@@ -20,7 +20,7 @@ class Tela_login(Janela):
                 nome = usuario.get()
                 psw =  senha.get()
                     
-                if nome == 'admim' and psw == '123':
+                if nome == 'Admim' and psw == 'admim123':
 
                     msg.showinfo('Logando', 'Login realizado com sucesso!!')
 
@@ -28,8 +28,8 @@ class Tela_login(Janela):
                     self.janela.destroy()
                        
                     # Criando uma nova janela
-                    finacas = Home('Conta corrente', 'Saldo', nome, self.saldo)
-                    finacas.criarHome()              
+                    telaHome = Home('Página principal', 'Menu Principal', nome, self.saldo)
+                    telaHome.criarHome()              
                 else:
                     usuario.config(highlightbackground='red', highlightthickness=2, highlightcolor='red')
                     senha.config(highlightbackground='red', highlightthickness=2, highlightcolor='red')
@@ -37,9 +37,9 @@ class Tela_login(Janela):
                         
         self.criar_janela()
         # Criando titulo da tela
-        self.frameCima(30,'#4169e1')
+        self.frameCima(20,'#4169e1')
         texto = tk.Label(self.frame_superior ,text=f'{self.titulo}', font=('arial 20'), foreground='#e5e4fb', bg="#4169e1")
-        texto.pack(pady=20)
+        texto.pack(pady=10)
 
         #Imagem de Ilustrativa
         logo = tk.PhotoImage(file='img\\logos\\logobgclaroNome.png')
@@ -58,13 +58,13 @@ class Tela_login(Janela):
 
         # Redimensionar a imagem proporcionalmente
         img_redimensionada = logo.subsample(escala_x, escala_y)
-        self.frameEsquerdo(350,370,None)
+        self.frameEsquerdo(350,320,None)
         l_img = tk.Label(self.frame_esquerdo, image=img_redimensionada, width=300)
         l_img.pack(expand=True, padx=20)
 
             
         # Criando inputs de login
-        self.frameDireito(350,370,None)
+        self.frameDireito(350,None,None)
         lb_usuario = tk.Label(self.frame_direito, text='Digite o nome:*', font=('arial 8'), width=80, anchor='nw')
         lb_usuario.pack(pady=10, padx=20)
         usuario = tk.Entry(self.frame_direito, width=80)
@@ -78,7 +78,7 @@ class Tela_login(Janela):
 
         # Criando o botão de validação
         botao = tk.Button(self.frame_direito, text="LOGAR", command=valida_senha, background='#334690', fg='white', padx=20, pady=10,borderwidth=0, relief='flat')
-        botao.pack(padx=20, pady=10)
+        botao.pack(padx=20, pady=20)
 
         self.exibir_janela()
 

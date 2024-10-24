@@ -14,28 +14,28 @@ class Janela:
     def criar_janela(self):
         # criando janela
         self.janela = tk.Tk()
-        self.janela.geometry('700x350')
+        self.janela.geometry('700x400')
         self.janela.resizable(False, False)
         self.janela.title(f'{self.nome}')
         #Favicon da janela
         favicon = tk.PhotoImage(file='img\\logos\\favicon.png')
-        self.janela.iconphoto(False,favicon)
+        self.janela.iconphoto(False, favicon)
 
     def frameCima(self, altura, corFundo):
         self.frame_superior = tk.Frame(self.janela, bg=corFundo, height=altura)
-        self.frame_superior.pack(side='top', fill='x')  
+        self.frame_superior.pack(side='top', fill='both')  
 
     def frameBaixo(self,altura, corFundo):
         self.frame_inferior = tk.Frame(self.janela, height=altura, bg=corFundo)
-        self.frame_inferior.pack(side='top', fill='x')
+        self.frame_inferior.pack(side='top', fill='both')
 
     def frameEsquerdo(self,largura,altura, corFundo): 
         self.frame_esquerdo = tk.Frame(self.janela, width=largura, bg=corFundo, height=altura)
-        self.frame_esquerdo.pack(side='left', fill='x')
+        self.frame_esquerdo.pack(side='left', fill='both')
 
     def frameDireito(self,largura,altura, corFundo): 
         self.frame_direito = tk.Frame(self.janela, width=largura, bg=corFundo, height=altura)
-        self.frame_direito.pack(side='left', fill='x')
+        self.frame_direito.pack(side='left', fill='both')
 
     def exibir_janela(self):
         # exibindo a janela

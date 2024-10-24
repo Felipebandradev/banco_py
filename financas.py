@@ -44,7 +44,7 @@ class telaFinancas(Janela,ContaCorrente):
         def voltarHome():
             from home import Home
             self.janela.destroy()
-            home = Home("Home","Menu Principal",self.usuario, self.saldoAtual)
+            home = Home('Página principal', 'Menu Principal',self.usuario, self.saldoAtual)
             home.criarHome()
 
 
@@ -53,7 +53,7 @@ class telaFinancas(Janela,ContaCorrente):
 
         self.criar_janela()
 
-        #Titulo da página
+        #Titulo da página        
         l_titulo = tk.Label(self.janela, text=f'{self.titulo}', font=('Arial 14'),anchor='nw', width=60)
         l_titulo.pack(pady=5)
         exibirSaldo = tk.Label(self.janela, text=f'Saldo: R$ {self.saldoAtual:.2f}', font=('Arial 12'),anchor='nw', width=73)
@@ -77,7 +77,7 @@ class telaFinancas(Janela,ContaCorrente):
 
         lb_textoFEEDBACK = tk.Label(self.janela, text='')
 
-        b_voltar = tk.Button(self.janela, text='Voltar a Home', command=voltarHome)
+        b_voltar = tk.Button(self.janela, text='Voltar', command=voltarHome)
         b_voltar.pack(pady=5)
 
 
@@ -85,5 +85,5 @@ class telaFinancas(Janela,ContaCorrente):
     
     
 
-# app = telaFinancas('Finanças', 'Deposite ou Saque', 'Admim', 0)
-# app.criarFinancas()
+app = telaFinancas('Finanças', 'Deposite ou Saque', 'Admim', 0)
+app.criarFinancas()
