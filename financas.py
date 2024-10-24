@@ -136,6 +136,3 @@ class telaFinancas(Janela,ContaCorrente):
         self.exibir_janela()
     
     
-
-app = telaFinancas('Finanças', 'Deposite ou Saque', 'Admim', 0)
-app.criarFinancas()
